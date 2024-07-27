@@ -18,27 +18,38 @@
             padding: 1em 0;
             position: relative;
         }
+        .logo {
             position: absolute;
             top: 10px;
             left: 10px;
             width: 100px; /* Adjust size as needed */
             height: auto;
         }
+        nav {
+            margin-top: 1em;
+        }
+        nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
         .container {
             width: 80%;
             margin: 0 auto;
+            padding: 20px;
         }
         .hero {
-            background-color: #000; /* black background */
+            background-color: #ffc0cb; /* Soft pink background */
             padding: 2em;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            color: #ffffff; /* White text color for contrast */
+            color: #333; /* Dark text color for contrast */
             margin: 2em 0;
             text-align: left;
         }
-        .services {
-            background-color: #006400; /* Dark green background for services section */
+        .services, .about, .contact {
+            background-color: #006400; /* Dark green background for sections */
             padding: 2em;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -46,18 +57,10 @@
             margin: 2em 0;
             text-align: left;
         }
-        .services h2 {
-            color: #ff5722; /* Orange color for section header */
+        .services h2, .about h2, .contact h2 {
+            color: #ff5722; /* Orange color for section headers */
         }
-        .services p, .hero p {
-            font-size: 1.2em;
-            margin: 0.5em 0;
-        }
-        h1 {
-            font-size: 2.5em;
-            margin-bottom: 0.5em;
-        }
-        p {
+        .services p, .about p, .contact p {
             font-size: 1.2em;
             margin: 0.5em 0;
         }
@@ -71,6 +74,11 @@
 <body>
     <header>
         <img src="images/logo.webp" alt="Riot Bunny Logo" class="logo">
+        <nav>
+            <a href="#services">Services</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
         <h1>Welcome to Riot Bunny</h1>
     </header>
     <div class="container">
@@ -79,9 +87,17 @@
             <p>We specialize in creating fully customized web forms and landing pages tailored to your business needs.</p>
             <p>Contact us today to get started!</p>
         </section>
-        <section class="services">
+        <section class="services" id="services">
             <h2>Our Services</h2>
             <p>At Riot Bunny, we specialize in providing fully customized web forms and landing pages tailored to meet the unique needs of small businesses. Our services include designing user-friendly and visually appealing web forms that integrate seamlessly with your existing systems, ensuring efficient data collection and management. We create high-converting landing pages that are optimized for search engines and designed to capture leads effectively. In addition, we offer complete website development services, providing a cohesive online presence for your business. Our team is also skilled in developing interactive and engaging email templates that help you communicate with your audience professionally. With Riot Bunny, you get a comprehensive suite of HTML coding services, including advanced features, custom styling, and robust performance optimization, all aimed at enhancing your digital footprint and driving business growth.</p>
+        </section>
+        <section class="about" id="about">
+            <h2>About Us</h2>
+            <p>Riot Bunny is dedicated to helping small businesses create a strong online presence with custom HTML solutions. Our team of experienced developers and designers work closely with you to understand your needs and deliver solutions that exceed your expectations. We believe in the power of customization and strive to provide services that are tailored to each client's unique requirements. With a focus on quality and customer satisfaction, Riot Bunny is your go-to partner for all your web form and landing page needs.</p>
+        </section>
+        <section class="contact" id="contact">
+            <h2>Contact Us</h2>
+            <p>Ready to take your online presence to the next level? Contact Riot Bunny today to discuss your project. Whether you need a custom web form, a high-converting landing page, or a complete website overhaul, we're here to help. Reach out to us via email at <a href="mailto:info@riotbunny.com">info@riotbunny.com</a> or give us a call at (123) 456-7890. Let's work together to create something amazing!</p>
         </section>
     </div>
     <footer>
@@ -89,4 +105,3 @@
     </footer>
 </body>
 </html>
-
