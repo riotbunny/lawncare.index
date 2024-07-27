@@ -11,13 +11,17 @@
             margin: 0;
             padding: 0;
             background-color: #000; /* All black background */
-            color: #090909; /* black text color */
+            color: #fff; /* White text color */
         }
         header {
-            background-color: rgba(0, 0, 0, 0.5); /* Black background with 50% transparency */
+            background-color: #333; /* Dark grey background for header */
             position: fixed;
             width: 100%;
             z-index: 1000;
+            transition: background-color 0.5s ease;
+        }
+        header.scrolled {
+            background-color: #000; /* Black background when scrolled */
         }
         .navbar {
             margin-bottom: 0;
@@ -119,5 +123,14 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script>
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 50) {
+                $('header').addClass('scrolled');
+            } else {
+                $('header').removeClass('scrolled');
+            }
+        });
+    </script>
 </body>
 </html>
