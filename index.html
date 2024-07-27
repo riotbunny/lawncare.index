@@ -20,7 +20,10 @@
             z-index: 1000;
             transition: background-color 0.5s ease;
             height: 40px; /* Reduce header height */
-            line-height: 40px; /* Center text vertically */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
         }
         header.scrolled {
             background-color: #000; /* Black background when scrolled */
@@ -31,13 +34,15 @@
         .navbar-brand {
             display: flex;
             align-items: center;
-            position: absolute;
-            right: 20px; /* Move logo to the top right */
-            top: 5px;
         }
         .brand-img {
             width: 30px; /* Adjusted size */
             height: auto;
+        }
+        .nav {
+            position: absolute;
+            bottom: 0;
+            right: 20px;
         }
         .nav > li > a {
             color: #fff !important; /* White text for nav links */
@@ -87,26 +92,19 @@
 </head>
 <body>
     <header id="top" class="navbar navbar-default navbar-fixed-top js-navbar animated fadeInDown">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a href="#top" class="navbar-brand js-target-scroll">
-                    <img alt="Riot Bunny Logo" class="brand-img" src="images/logo.webp">
-                </a>
-            </div>
-            <div class="collapse navbar-collapse" id="navbar-collapse" aria-expanded="false">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="active"><a href="#top" class="js-target-scroll">Home</a></li>
-                    <li><a href="#about" class="js-target-scroll">About</a></li>
-                    <li><a href="#services" class="js-target-scroll">Services</a></li>
-                    <li><a href="#contact" class="js-target-scroll">Contact</a></li>
-                </ul>
-            </div>
+        <div class="navbar-header">
+            <a href="#top" class="navbar-brand js-target-scroll">
+                <img alt="Riot Bunny Logo" class="brand-img" src="images/logo.webp">
+                Riot Bunny
+            </a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-collapse" aria-expanded="false">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#top" class="js-target-scroll">Home</a></li>
+                <li><a href="#about" class="js-target-scroll">About</a></li>
+                <li><a href="#services" class="js-target-scroll">Services</a></li>
+                <li><a href="#contact" class="js-target-scroll">Contact</a></li>
+            </ul>
         </div>
     </header>
 
