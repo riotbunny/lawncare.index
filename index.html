@@ -14,9 +14,33 @@
             text-align: center;
         }
         header {
-            background-color: #000; /* Black background for header */
-            padding: 1em 0;
-            position: relative;
+            <header id="top" class="navbar js-navbar animated fadeInDown affix">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="#layout" class="brand js-target-scroll">
+            <img alt="" width="100" class="brand-img js-brand-hinge animated hinge" src="img/brand.png">
+            <i></i>
+          </a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-collapse" aria-expanded="false">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a href="#layout" class="js-target-scroll">Home</a></li>
+            <li class=""><a href="#about" class="js-target-scroll">About</a></li>
+            <li><a href="#features" class="js-target-scroll">Services</a></li>
+            <li><a href="#portfolio" class="js-target-scroll">Portfolio</a></li>
+            <li><a href="#clients" class="js-target-scroll">Clients</a></li>
+            <li><a href="#team" class="js-target-scroll">Team</a></li>
+            <li><a href="#contacts" class="js-target-scroll">Contacts</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>;
         }
         .logo {
             position: absolute;
