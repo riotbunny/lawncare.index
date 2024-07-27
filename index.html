@@ -15,25 +15,30 @@
         }
         header {
             background-color: magenta; /* Solid magenta background for header */
-            height: 40px; /* Reduce header height */
+            height: 60px; /* Adjust header height for better mobile compatibility */
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 0 20px;
+            transition: background-color 0.5s ease;
         }
-        .navbar {
-            margin-bottom: 0;
+        header.scrolled {
+            background-color: #000; /* Black background when scrolled */
+        }
+        header.scrolled .navbar-brand {
+            color: magenta !important; /* Magenta text when scrolled */
         }
         .navbar-brand {
             font-weight: bold;
             color: #000; /* Black text color */
+            transition: color 0.5s ease;
         }
         .nav {
             display: flex;
         }
         .nav > li > a {
             color: #fff !important; /* White text for nav links */
-            line-height: 40px; /* Center text vertically */
+            line-height: 60px; /* Center text vertically */
         }
         .nav > li > a:hover {
             color: #ff5722 !important; /* Orange text on hover */
@@ -41,7 +46,7 @@
         .container {
             width: 80%;
             margin: 0 auto;
-            padding-top: 60px; /* Adjusted offset for reduced header height */
+            padding-top: 80px; /* Adjusted offset for header height */
         }
         .section {
             padding: 60px 0;
@@ -75,10 +80,27 @@
             background-color: #000; /* Black background for footer */
             text-align: center;
         }
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                height: auto;
+                padding: 10px 20px;
+            }
+            .nav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .nav > li {
+                margin: 5px 0;
+            }
+            .nav > li > a {
+                line-height: normal;
+            }
+        }
     </style>
 </head>
 <body>
-    <header>
+    <header id="top">
         <a href="#top" class="navbar-brand js-target-scroll">Riot Bunny</a>
         <ul class="nav navbar-nav">
             <li class="active"><a href="#top" class="js-target-scroll">Home</a></li>
@@ -115,6 +137,12 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script>
         $(window).scroll(function() {
+            if ($(this).scrollTop() > 50) {
+                $('header').addClass('scrolled');
+            } else {
+                $('header').removeClass('scrolled');
+            }
+
             $('.section').each(function() {
                 if ($(this).offset().top < $(window).scrollTop() + $(window).height() &&
                     $(this).offset().top + $(this).height() > $(window).scrollTop()) {
