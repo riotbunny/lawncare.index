@@ -20,12 +20,10 @@
             justify-content: space-between;
             align-items: center;
             padding: 0 20px;
-            transition: background-color 0.5s ease;
         }
         .navbar-brand {
             font-weight: bold;
             color: magenta; /* Magenta text color */
-            transition: color 0.5s ease;
         }
         .nav {
             display: flex;
@@ -52,13 +50,11 @@
         .section {
             padding: 60px 0;
             background-color: #000; /* Black background for all sections */
-            transition: transform 0.5s ease, opacity 0.5s ease;
-            transform: scale(0.95);
-            opacity: 0;
+            opacity: 0; /* Initially hide the sections */
+            transition: opacity 1s ease-in-out; /* Fade-in effect */
         }
         .section.visible {
-            transform: scale(1);
-            opacity: 1;
+            opacity: 1; /* Show the sections when they become visible */
         }
         .hero {
             border-radius: 8px;
@@ -129,21 +125,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script>
-        $(window).scroll(function() {
-            if ($(this).scrollTop() > 50) {
-                $('header').addClass('scrolled');
-            } else {
-                $('header').removeClass('scrolled');
-            }
-
-            $('.section').each(function() {
-                if ($(this).offset().top < $(window).scrollTop() + $(window).height() &&
-                    $(this).offset().top + $(this).height() > $(window).scrollTop()) {
-                    $(this).addClass('visible');
-                } else {
-                    $(this).removeClass('visible');
-                }
-            });
+        $(document).ready(function() {
+            $('.section').addClass('visible');
         });
     </script>
 </body>
