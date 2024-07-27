@@ -14,19 +14,12 @@
             color: #fff; /* White text color */
         }
         header {
-            background-color: magenta; /* Magenta background for header */
-            position: fixed;
-            width: 100%;
-            z-index: 1000;
-            transition: background-color 0.5s ease;
+            background-color: magenta; /* Solid magenta background for header */
             height: 40px; /* Reduce header height */
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 0 20px;
-        }
-        header.scrolled {
-            background-color: #000; /* Black background when scrolled */
         }
         .navbar {
             margin-bottom: 0;
@@ -40,9 +33,7 @@
             height: auto;
         }
         .nav {
-            position: absolute;
-            bottom: 0;
-            right: 20px;
+            display: flex;
         }
         .nav > li > a {
             color: #fff !important; /* White text for nav links */
@@ -91,21 +82,17 @@
     </style>
 </head>
 <body>
-    <header id="top" class="navbar navbar-default navbar-fixed-top js-navbar animated fadeInDown">
-        <div class="navbar-header">
-            <a href="#top" class="navbar-brand js-target-scroll">
-                <img alt="Riot Bunny Logo" class="brand-img" src="images/logo.webp">
-                Riot Bunny
-            </a>
-        </div>
-        <div class="collapse navbar-collapse" id="navbar-collapse" aria-expanded="false">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#top" class="js-target-scroll">Home</a></li>
-                <li><a href="#about" class="js-target-scroll">About</a></li>
-                <li><a href="#services" class="js-target-scroll">Services</a></li>
-                <li><a href="#contact" class="js-target-scroll">Contact</a></li>
-            </ul>
-        </div>
+    <header>
+        <a href="#top" class="navbar-brand js-target-scroll">
+            <img alt="Riot Bunny Logo" class="brand-img" src="images/logo.webp">
+            Riot Bunny
+        </a>
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="#top" class="js-target-scroll">Home</a></li>
+            <li><a href="#about" class="js-target-scroll">About</a></li>
+            <li><a href="#services" class="js-target-scroll">Services</a></li>
+            <li><a href="#contact" class="js-target-scroll">Contact</a></li>
+        </ul>
     </header>
 
     <div class="container">
@@ -135,12 +122,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script>
         $(window).scroll(function() {
-            if ($(this).scrollTop() > 50) {
-                $('header').addClass('scrolled');
-            } else {
-                $('header').removeClass('scrolled');
-            }
-
             $('.section').each(function() {
                 if ($(this).offset().top < $(window).scrollTop() + $(window).height() &&
                     $(this).offset().top + $(this).height() > $(window).scrollTop()) {
