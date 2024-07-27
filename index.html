@@ -48,6 +48,13 @@
         .section {
             padding: 60px 0;
             background-color: #000; /* Black background for all sections */
+            transition: transform 0.5s ease, opacity 0.5s ease;
+            transform: scale(0.95);
+            opacity: 0;
+        }
+        .section.visible {
+            transform: scale(1);
+            opacity: 1;
         }
         .hero {
             border-radius: 8px;
@@ -130,6 +137,15 @@
             } else {
                 $('header').removeClass('scrolled');
             }
+
+            $('.section').each(function() {
+                if ($(this).offset().top < $(window).scrollTop() + $(window).height() &&
+                    $(this).offset().top + $(this).height() > $(window).scrollTop()) {
+                    $(this).addClass('visible');
+                } else {
+                    $(this).removeClass('visible');
+                }
+            });
         });
     </script>
 </body>
