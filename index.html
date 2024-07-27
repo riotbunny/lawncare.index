@@ -14,11 +14,13 @@
             color: #fff; /* White text color */
         }
         header {
-            background-color: #333; /* Dark grey background for header */
+            background-color: magenta; /* Magenta background for header */
             position: fixed;
             width: 100%;
             z-index: 1000;
             transition: background-color 0.5s ease;
+            height: 40px; /* Reduce header height */
+            line-height: 40px; /* Center text vertically */
         }
         header.scrolled {
             background-color: #000; /* Black background when scrolled */
@@ -31,11 +33,12 @@
             align-items: center;
         }
         .brand-img {
-            width: 50px;
+            width: 25px; /* Adjusted size */
             margin-right: 10px;
         }
         .nav > li > a {
             color: #fff !important; /* White text for nav links */
+            line-height: 40px; /* Center text vertically */
         }
         .nav > li > a:hover {
             color: #ff5722 !important; /* Orange text on hover */
@@ -43,7 +46,7 @@
         .container {
             width: 80%;
             margin: 0 auto;
-            padding-top: 80px; /* Offset for fixed header */
+            padding-top: 60px; /* Adjusted offset for reduced header height */
         }
         .section {
             padding: 60px 0;
